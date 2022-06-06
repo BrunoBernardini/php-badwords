@@ -2,6 +2,7 @@
 
 $wordToCensor = $_GET["censor"];
 $review = "Wow. Heartfelt, funny, beautiful, sad, Morbius has it all. Ever since I was a young child I dreamed of the Marvel Legend, Michael Morbius, to make his debut on the big screen. I’d run into the kitchen screaming “father! Father! Have they announced a film about Doctor Micheal Morbius yet?” My father would chuckle, put down his newspaper and say “no son. Not yet.” As my life went on I became afraid I would not live to see the day of Doctor Micheal Morbius’ theatrical debut. But then the fateful day Venom (2018) released, I knew it was possible. 4 years later I run into the kitchen “Father! Father! I am about to see Doctor Micheal Morbius’ big screen debut!” But there was no chuckle. Not rustling of his newspaper. My father had died right before I entered. I had an extra ticket for him. I went to the movie anyways and I loved it! But I stay for the big post credit scene; as any Morbius fan would. And there it was. My own father, who had died and put his soul into the projector, as the vulture. ‘What’s up doc!’ He said. My own father died so he could help make Morbius even better. God love him. God love Morbius.";
+$reviewLength = strlen($review);
 
 // var_dump($wordToCensor);
 $censoredReview = str_replace($wordToCensor, "***", $review);
@@ -23,7 +24,7 @@ $censoredReview = str_replace($wordToCensor, "***", $review);
   <div class="content w-75 d-flex">
     <img src="https://appalcinema.it/wp-content/uploads/2022/03/morbius.jpg" alt="MorbiusSweep">
     <div class="text ms-5 flex-wrap">
-      <div class="review-title d-flex align-items-center mb-5">
+      <div class="review-title d-flex align-items-center mb-4">
         <h3 class="d-inline mb-0 me-3">The Movie Ever</h3>
         <span class="stars">
           <i class="fa-solid fa-star"></i>
@@ -40,10 +41,11 @@ $censoredReview = str_replace($wordToCensor, "***", $review);
           <i class="fa-solid fa-star"></i>
         </span>
       </div>
-      <p class="mb-5">
-        <?php echo $censoredReview ?>
+      <p class="mb-4">
+        <?php echo $review ?>
       </p>
-      <span><i class="fa-solid fa-heart me-2"></i>8.641 likes</span>
+      <div class="mb-5"><i class="fa-solid fa-heart me-2"></i><?php echo $reviewLength ?> caratteri</div>
+      <?php if($wordToCensor!==null) echo "<h3>Review censurata (parola rimossa: \"$wordToCensor\"):</h3><br>$censoredReview"?>
     </div>
   </div>
   <script src="./assets/JS/script.js"></script>
