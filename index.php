@@ -1,5 +1,10 @@
 <?php
 
+$wordToCensor = $_GET["censor"];
+$review = "Wow. Heartfelt, funny, beautiful, sad, Morbius has it all. Ever since I was a young child I dreamed of the Marvel Legend, Michael Morbius, to make his debut on the big screen. I’d run into the kitchen screaming “father! Father! Have they announced a film about Doctor Micheal Morbius yet?” My father would chuckle, put down his newspaper and say “no son. Not yet.” As my life went on I became afraid I would not live to see the day of Doctor Micheal Morbius’ theatrical debut. But then the fateful day Venom (2018) released, I knew it was possible. 4 years later I run into the kitchen “Father! Father! I am about to see Doctor Micheal Morbius’ big screen debut!” But there was no chuckle. Not rustling of his newspaper. My father had died right before I entered. I had an extra ticket for him. I went to the movie anyways and I loved it! But I stay for the big post credit scene; as any Morbius fan would. And there it was. My own father, who had died and put his soul into the projector, as the vulture. ‘What’s up doc!’ He said. My own father died so he could help make Morbius even better. God love him. God love Morbius.";
+
+// var_dump($wordToCensor);
+$censoredReview = str_replace($wordToCensor, "***", $review);
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +34,14 @@
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
         </span>
       </div>
       <p class="mb-5">
-      Wow. Heartfelt, funny, beautiful, sad, Morbius has it all. Ever since I was a young child I dreamed of the Marvel Legend, Michael Morbius, to make his debut on the big screen. I’d run into the kitchen screaming “father! Father! Have they announced a film about Doctor Micheal Morbius yet?” My father would chuckle, put down his newspaper and say “no son. Not yet.” As my life went on I became afraid I would not live to see the day of Doctor Micheal Morbius’ theatrical debut. But then the fateful day Venom (2018) released, I knew it was possible. 4 years later I run into the kitchen “Father! Father! I am about to see Doctor Micheal Morbius’ big screen debut!” But there was no chuckle. Not rustling of his newspaper. My father had died right before I entered. I had an extra ticket for him. I went to the movie anyways and I loved it! But I stay for the big post credit scene; as any Morbius fan would. And there it was. My own father, who had died and put his soul into the projector, as the vulture. ‘What’s up doc!’ He said. My own father died so he could help make Morbius even better. God love him. God love Morbius.
+        <?php echo $censoredReview ?>
       </p>
       <span><i class="fa-solid fa-heart me-2"></i>8.641 likes</span>
     </div>
