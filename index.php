@@ -45,7 +45,7 @@ $censoredReview = str_replace($wordToCensor, "***", $review);
         <?php echo $review ?>
       </p>
       <div class="mb-5"><i class="fa-solid fa-heart me-2"></i><?php echo $reviewLength ?> caratteri</div>
-      <?php if($wordToCensor!==null) echo "<h3>Review censurata (parola rimossa: \"$wordToCensor\"):</h3><br>$censoredReview"?>
+      <?php if($wordToCensor!==null) echo "<h3 class=\"mb-4\">Review censurata (parola rimossa: \"$wordToCensor\"):</h3><br>$censoredReview"?>
     </div>
   </div>
   <script src="./assets/JS/script.js"></script>
