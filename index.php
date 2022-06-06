@@ -20,18 +20,18 @@ $censoredReview = str_replace($wordToCensor, "***", $review);
   <title>Morbius review (censor bad words)</title>
 </head>
 <body class="d-flex flex-column justify-content-center align-items-center my-5">
-  <h1 class="mb-5">Morbius Review</h1>
+  <h1 class="text-primary mb-5">Morbius Review</h1>
   <div class="content w-75 d-flex">
     <img src="https://appalcinema.it/wp-content/uploads/2022/03/morbius.jpg" alt="MorbiusSweep">
     <div class="text ms-5 flex-wrap">
       <div class="review-title d-flex align-items-center mb-4">
         <h3 class="d-inline mb-0 me-3">The Movie Ever</h3>
         <span class="stars">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star text-warning"></i>
+          <i class="fa-solid fa-star text-warning"></i>
+          <i class="fa-solid fa-star text-warning"></i>
+          <i class="fa-solid fa-star text-warning"></i>
+          <i class="fa-solid fa-star text-warning"></i>
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
@@ -42,10 +42,10 @@ $censoredReview = str_replace($wordToCensor, "***", $review);
         </span>
       </div>
       <p class="mb-4">
-        <?php echo $review ?>
+        <?php echo $review; ?>
       </p>
-      <div class="mb-5"><i class="fa-solid fa-heart me-2"></i><?php echo $reviewLength ?> caratteri</div>
-      <?php if($wordToCensor!==null) echo "<h3 class=\"mb-4\">Review censurata (parola rimossa: \"$wordToCensor\"):</h3><br>$censoredReview"?>
+      <div class="mb-5"><i class="fa-solid fa-heart me-2 text-danger"></i><?php echo $reviewLength; ?> caratteri</div>
+      <?php if($wordToCensor!==null) echo "<h3 class=\"mb-4\">Review censurata (parola rimossa: \"<span class=\"text-info\">$wordToCensor</span>\"):</h3><br>$censoredReview"; ?>
     </div>
   </div>
   <script src="./assets/JS/script.js"></script>
